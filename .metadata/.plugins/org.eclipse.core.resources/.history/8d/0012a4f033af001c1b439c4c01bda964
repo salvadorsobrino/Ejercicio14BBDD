@@ -1,0 +1,15 @@
+package entidades;
+
+public class Coche {
+
+	private int id;
+	private String matricula;
+	private String marca;
+	private double peso;
+	id
+	matricula;
+	marca;
+	modelo;
+	kilometros;
+	
+}

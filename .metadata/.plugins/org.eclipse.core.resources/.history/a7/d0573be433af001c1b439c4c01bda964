@@ -1,0 +1,10 @@
+package entidades;
+
+public class Coche {
+
+	private int id;
+	private String nombre;
+	private int edad;
+	private double peso;
+	
+}

@@ -1,0 +1,28 @@
+package modelo.negocio;
+import modelo.entidades.Coche;
+import modelo.persistencia.CocheDAOmySQL;
+import modelo.persistencia.interfaces.DAOCocheInterfaz;
+
+/*
+ * Tendremos las siguientes reglas de negocio: 
+ * La matricula tendrá una longitud de 7
+ * No puede haber dos matriculas repetidas
+ * Los kilometros no podrán ser negativos 
+*/
+
+public class GestorCoche {
+	private DAOCocheInterfaz daoCocheI = new CocheDAOmySQL();
+	
+	public int alta(Coche c){
+		if(c.getMatricula().length() >= 3) {
+			boolean alta = daoPersona.alta(p);
+			if(alta) {
+				return 0;
+			}else {
+				return 1;
+			}
+		}else {
+			return 2;
+		}
+	}
+}

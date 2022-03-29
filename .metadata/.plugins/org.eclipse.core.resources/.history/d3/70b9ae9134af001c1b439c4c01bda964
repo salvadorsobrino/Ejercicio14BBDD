@@ -1,0 +1,15 @@
+package interfaces;
+
+import java.util.List;
+
+public interface DAOCocheInterfaz {
+	
+	boolean altaCoche(); //Alta de coche
+	boolean eliminarCoche(); //Eliminar coche por id
+	boolean modificarCoche(); //Modificar coche por id
+	Coche buscarCoche(int id); //Buscar coche por id
+	Coche buscarCoche(String matricula); //Buscar coche por matricula
+	Coche buscarCoche(); //Buscar coches por marca
+	Coche buscarCoche(); //Buscar coches por modelo
+	List<Coche> listarCoches(); //Listar todos los coches
+}
