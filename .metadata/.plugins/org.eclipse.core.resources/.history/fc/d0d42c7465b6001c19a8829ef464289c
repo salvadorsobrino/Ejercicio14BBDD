@@ -13,7 +13,7 @@ public class mainCoche {
 		Scanner sc = new Scanner(System.in);
 		boolean fin = false;
 		GestorCoche gc = new GestorCoche();
-		List<Coche> lista = null;
+		List<Coche> lista;
 		/*
 		1. Alta de coche
 		2. Eliminar coche por id
@@ -58,7 +58,7 @@ public class mainCoche {
 				break;
 			case 3:
 				System.out.println("Modificar coche (id). Introduce la id ");
-				id = sc.nextInt();
+				int id = sc.nextInt();
 				if (gc.buscarId(id)==null) {
 					System.out.println("No se ha encontrado el coche");
 				} else {

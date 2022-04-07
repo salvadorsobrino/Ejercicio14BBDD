@@ -13,7 +13,7 @@ public class mainCoche {
 		Scanner sc = new Scanner(System.in);
 		boolean fin = false;
 		GestorCoche gc = new GestorCoche();
-		List<Coche> lista = null;
+		List<Coche> lista;
 		/*
 		1. Alta de coche
 		2. Eliminar coche por id

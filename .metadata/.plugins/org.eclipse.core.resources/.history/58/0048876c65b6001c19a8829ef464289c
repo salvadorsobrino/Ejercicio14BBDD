@@ -13,7 +13,7 @@ public class mainCoche {
 		Scanner sc = new Scanner(System.in);
 		boolean fin = false;
 		GestorCoche gc = new GestorCoche();
-		List<Coche> lista = null;
+		List<Coche> lista;
 		/*
 		1. Alta de coche
 		2. Eliminar coche por id
@@ -49,7 +49,7 @@ public class mainCoche {
 				break;
 			case 2:
 				System.out.println("Eliminar coche (id). Introduce la id ");
-				int id = sc.nextInt();
+				id = sc.nextInt();
 				if(gc.baja(id)) {
 					System.out.println("Coche eliminado");
 				} else {
@@ -57,30 +57,7 @@ public class mainCoche {
 				}
 				break;
 			case 3:
-				System.out.println("Modificar coche (id). Introduce la id ");
-				id = sc.nextInt();
-				if (gc.buscarId(id)==null) {
-					System.out.println("No se ha encontrado el coche");
-				} else {
-					System.out.println(gc.buscarId(id));
-					System.out.println("Modificar valores (matricula/marca/modelo/km). Pulsa ENTER por cada valor");
-					
-					matricula = sc.next();
-					marca = sc.next();
-					modelo = sc.next();
-					km  = sc.nextInt();
-					
-					c = new Coche(id,matricula,marca,modelo,km);
-					int modificar = gc.modificar(c);
-					if(modificar  == 0) {
-						System.out.println("Coche modificado");
-					}else if(modificar == 1) {
-						System.out.println("Error de conexión con la BBDD");
-					}else if(modificar  == 2){
-						System.out.println("La matricula no tiene 7 carácteres o está repetida o los KM<0");
-					}
-					System.out.println(gc.buscarId(id));
-				}
+				
 
 				break;
 			case 4:

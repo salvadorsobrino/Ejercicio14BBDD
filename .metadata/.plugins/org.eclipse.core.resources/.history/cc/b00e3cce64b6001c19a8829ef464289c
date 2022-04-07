@@ -1,5 +1,6 @@
 package modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,7 +14,6 @@ public class mainCoche {
 		Scanner sc = new Scanner(System.in);
 		boolean fin = false;
 		GestorCoche gc = new GestorCoche();
-		List<Coche> lista = null;
 		/*
 		1. Alta de coche
 		2. Eliminar coche por id
@@ -48,17 +48,8 @@ public class mainCoche {
 				}
 				break;
 			case 2:
-				System.out.println("Eliminar coche (id). Introduce la id ");
-				int id = sc.nextInt();
-				if(gc.baja(id)) {
-					System.out.println("Coche eliminado");
-				} else {
-					System.out.println("No se ha podido eliminar");
-				}
-				break;
-			case 3:
 				System.out.println("Modificar coche (id). Introduce la id ");
-				id = sc.nextInt();
+				int id = sc.nextInt();
 				if (gc.buscarId(id)==null) {
 					System.out.println("No se ha encontrado el coche");
 				} else {
@@ -81,7 +72,15 @@ public class mainCoche {
 					}
 					System.out.println(gc.buscarId(id));
 				}
-
+				break;
+			case 3:
+				System.out.println("Eliminar coche (id). Introduce la id ");
+				id = sc.nextInt();
+				if(gc.baja(id)) {
+					System.out.println("Coche eliminado");
+				} else {
+					System.out.println("No se ha podido eliminar");
+				}
 				break;
 			case 4:
 				System.out.println("Buscar coche por ID: ");
@@ -117,7 +116,7 @@ public class mainCoche {
 			case 7:
 				System.out.println("Buscar coches por modelo: ");
 				modelo = sc.next();
-				lista = gc.buscarModelo(modelo);
+				List lista = gc.buscarModelo(modelo);
 				if (lista.size()>0) {
 					for (int i=0;i<lista.size();i++) {
 						System.out.println(lista.get(i));
@@ -128,7 +127,7 @@ public class mainCoche {
 				break;
 			case 8:
 				System.out.println("A continuación se listan todos los coches de la bbdd: ");
-				lista = gc.listar();
+				List<Coche> lista = gc.listar();
 				for (int i=0;i<lista.size();i++) {
 					System.out.println(lista.get(i));
 				}
@@ -155,5 +154,5 @@ public class mainCoche {
 		System.out.println("8- Listar todos los coches");
 		System.out.println("9- Salir del programa");
 	}
+	}
 }
-
